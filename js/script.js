@@ -49,8 +49,8 @@ $(document).ready(function(){
 	calcServicesBoxHeight();
 
 	$('.selectpicker').selectpicker({
-		style: 'btn-info',
-		size: 4
+		// style: 'btn-info',
+		size: 10
 	});
 
 
