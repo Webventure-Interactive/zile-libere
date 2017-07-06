@@ -50,7 +50,28 @@
 				<div class="col-xs-12 col-sm-6">
 					<div class="quote_text">
 <pre>
-[{"name":"Anul Nou","date":[{"date":"2018\/01\/01","weekday":"Monday"},{"date":"2018\/01\/02","weekday":"Tue"}]},{"name":"Ziua Unirii Principatelor Rom\u00e2ne","date":[{"date":"2018\/01\/24","weekday":"Wed"}]},{"name":"Pa\u0219tele Ortodox","date":[{"date":"2018\/04\/08","weekday":"Sun"},{"date":"2018\/04\/09","weekday":"Mon"}]},{"name":"Ziua Muncii","date":[{"date":"2018\/05\/01","weekday":"Fri"}]},{"name":"Ziua Copilului","date":[{"date":"2018\/06\/01","weekday":"Sat"}]},{"name":"Rusalii","date":[{"date":"2018\/05\/28","weekday":"Mon"}]},{"name":"Adormirea Maicii Domnului","date":[{"date":"2018\/08\/15","weekday":"Wed"}]},{"name":"Sf\u00e2ntul Andrei","date":[{"date":"2018\/11\/30","weekday":"Fri"}]},{"name":"Ziua Na\u021bional\u0103 a Rom\u00e2niei","date":[{"date":"2018\/12\/01","weekday":"Sat"}]},{"name":"Cr\u0103ciunul","date":[{"date":"2018\/12\/25","weekday":"Tue"},{"date":"2018\/12\/26","weekday":"Wed"}]}]
+{  
+  "name":"Anul Nou",
+  "date":[  
+     {  
+        "date":"2017/01/01",
+        "weekday":"Sun"
+     },
+     {  
+        "date":"2017/01/02",
+        "weekday":"Mon"
+     }
+  ]
+},
+{  
+  "name":"Ziua Unirii Principatelor Române",
+  "date":[  
+     {  
+        "date":"2017/01/24",
+        "weekday":"Tue"
+     }
+  ]
+}
 </pre>
 					</div>
 				</div>

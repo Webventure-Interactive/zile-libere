@@ -21,17 +21,31 @@ function showFreeDays(yearnr){
     });
 };
 
+function enterErrorLabel(labelName, message) {
+    removeErrorLabel(labelName);
+    $("*[name='" + labelName + "']").after("<label id='label_error' class='alert alert-danger' for='" + labelName + "'>" + message + "</label>");
+}
+function removeErrorLabel(labelName) {
+    $("label#label_error[for='" + labelName + "']").remove();
+}
+
 $(document).ready(function(){
 
 	calcServicesBoxHeight();
 
 	$('.search').click(function(){
 		var year = $('.input_zile').val();
-		showFreeDays(year);
 
-		setTimeout(function(){ // pentru a se face update si la anul din getDays.php
-			$('.the_year').text(year);
-		}, 100);
+		if ( year && year > 1970 ) {
+			removeErrorLabel("year");
+			showFreeDays(year);
+
+			setTimeout(function(){ // pentru a se face update si la anul din getDays.php
+				$('.the_year').text(year);
+			}, 100);
+		} else {
+			enterErrorLabel("year", "Te rugam sa introduci o valoare valida");
+		}
 	});
 
 });
