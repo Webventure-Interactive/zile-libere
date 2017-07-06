@@ -54,7 +54,7 @@ $(document).ready(function(){
 	});
 
 
-	$('.the_year').text($('.input_zile').val());
+	$('.the_year').text($('.btn-group.bootstrap-select .filter-option').text());
 
 	$('.btn-group.bootstrap-select').change(function(){
 		showFreeDays();
