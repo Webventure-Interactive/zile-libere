@@ -8,11 +8,16 @@
 		}
 		die(json_encode(['error' => 'Link-ul trebuie sa contina anul dorit']));
 	}
+
+	$year = date("Y");
+	if ( is_numeric(substr($_SERVER['REQUEST_URI'], -4)) ) {
+		$year = substr($_SERVER['REQUEST_URI'], -4);
+	}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Zile Libere</title>
+	<title>Zile Libere <?php echo $year ?></title>
 	<meta charset="UTF-8" >
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -30,18 +35,18 @@
 
 	<div class="header">
 		<div class="container">
-			<h1 class="title">Zile libere <span class="the_year"><?php echo date("Y"); ?></span></h1>
+			<h1 class="title">Zile libere <span class="the_year"><?php echo $year; ?></span></h1>
 			<h2 class="subtitle">Alege anul dorit pentru afisarea zilelor libere legale</h1>
 			
 			<div class="search_box">
-				<input type="text" name="year" value="<?php echo date("Y"); ?>" class="input_zile">
+				<input type="text" name="year" value="<?php echo $year; ?>" class="input_zile">
 				<button class="search">Cauta</button>
 			</div>
 		</div>
 	</div>
 
 	<div class="container">
-		<h3 class="content_title">Zile libere <span class="the_year"><?php echo date("Y"); ?></span></h3>
+		<h3 class="content_title">Zile libere <span class="the_year"><?php echo $year; ?></span></h3>
 
 		<div class="days_table clearfix">
 			<?php include("getDays.php"); ?>

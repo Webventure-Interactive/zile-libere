@@ -1,8 +1,16 @@
-<?php include('calcul_zile.php'); ?>
+<?php
+	include('calcul_zile.php');
 
-<?php setlocale(LC_ALL, 'ro_RO.utf8', 'ro'); ?>
+	$year = date("Y");
+	if ( is_numeric(substr($_SERVER['REQUEST_URI'], -4)) ) {
+		$year = substr($_SERVER['REQUEST_URI'], -4);
+	}
 
-<?php $days = returnLegalDays( isset($_POST['year']) ? $_POST['year'] : date("Y") ); ?>
+	setlocale(LC_ALL, 'ro_RO.utf8', 'ro');
+?>
+
+
+<?php $days = returnLegalDays( isset($_POST['year']) ? $_POST['year'] : $year ); ?>
 
 
 <?php $total_free_days = 0; ?>
