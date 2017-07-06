@@ -30,9 +30,9 @@ function removeErrorLabel(labelName) {
 }
 
 function showFreeDays(){
-	var year = $('.input_zile').val();
+	var year = $('.btn-group.bootstrap-select .filter-option').text();
 
-	if ( year && year > 1970 ) {
+	if ( year ) {
 		removeErrorLabel("year");
 		showFreeDaysTable(year);
 
@@ -48,9 +48,15 @@ $(document).ready(function(){
 
 	calcServicesBoxHeight();
 
+	$('.selectpicker').selectpicker({
+		style: 'btn-info',
+		size: 4
+	});
+
+
 	$('.the_year').text($('.input_zile').val());
 
-	$('.search').click(function(){
+	$('.btn-group.bootstrap-select').change(function(){
 		showFreeDays();
 	});
 

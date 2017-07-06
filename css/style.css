@@ -141,7 +141,7 @@ body{
 
 @media(min-width: 768px){
 	.search_box{
-		width: 606px;
+		width: 420px;
 		padding: 0;
 		padding-bottom: 60px;
 	}
@@ -176,6 +176,22 @@ body{
     color: #a94442;
     background-color: #f2dede;
     border: 1px solid #ebccd1;
+}
+
+.search_box .btn-group.bootstrap-select{
+	width: 100% !important;
+}
+.search_box .btn-group.bootstrap-select .btn,
+.search_box .btn-group.bootstrap-select .btn:hover, 
+.search_box .btn-group.bootstrap-select .btn:focus,
+.search_box .btn-group.bootstrap-select .btn:active{
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	line-height: 40px;
+	background: #fff;
+	color: #424242;
+	border-color: #9e9e9e;
 }
 
 /* END Header */
@@ -339,7 +355,8 @@ body{
 }
 
 .quote_text pre{
-    white-space: pre-wrap;
+    border: none;
+    background: transparent;
 }
 /* END Box Need API */
 

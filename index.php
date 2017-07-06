@@ -24,15 +24,29 @@
 	<title>Zile Libere <?php echo $year ?></title>
 	<meta charset="UTF-8" >
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+	<!-- Site CSS -->
 	<link rel="stylesheet" type="text/css" href="<?php echo $site_url; ?>/css/style.css">
+	
 	<script src="https://use.fontawesome.com/45050bf34e.js"></script>
 
+	<!-- Jquery -->
 	<script
 	  src="https://code.jquery.com/jquery-2.2.4.min.js"
 	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 	  crossorigin="anonymous"></script>
 
+	<!-- Bootstrap Select -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+
+	<!-- Site Js -->
   	<script type="text/javascript" src="<?php echo $site_url; ?>/js/script.js"></script>
 </head>
 <body>
@@ -43,8 +57,11 @@
 			<h2 class="subtitle">Alege anul dorit pentru afisarea zilelor libere legale</h1>
 			
 			<div class="search_box">
-				<input type="text" name="year" value="<?php echo $year; ?>" class="input_zile">
-				<button class="search">Cauta</button>
+				<select class="selectpicker">
+					<?php for ($i = $year - 20; $i <= $year + 20; $i++) { ?>
+						<option <?php echo $i == $year ? "selected" : ""; ?> ><?php echo $i; ?></option>
+					<?php } ?>
+				</select>
 			</div>
 		</div>
 	</div>
@@ -65,7 +82,7 @@
 				<div class="col-xs-12 col-sm-6">
 					<span class="text">Tot ce trebuie sa faci este sa apelezi</span>
 					<div class="quote_text"> /api/2017 </div>
-					<span class="text">sau anul dorit si vei primi un raspuns de forma:</span>
+					<span class="text">si vei primi un raspuns de forma:</span>
 				</div>
 				<div class="col-xs-12 col-sm-6">
 					<div class="quote_text">
