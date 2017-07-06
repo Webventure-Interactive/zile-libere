@@ -48,6 +48,8 @@ $(document).ready(function(){
 
 	calcServicesBoxHeight();
 
+	$('.the_year').text($('.input_zile').val());
+
 	$('.search').click(function(){
 		showFreeDays();
 	});
