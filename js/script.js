@@ -38,7 +38,7 @@ function showFreeDays(){
 
 		setTimeout(function(){ // pentru a se face update si la anul din getDays.php
 			$('.the_year').text(year);
-		}, 100);
+		}, 300);
 	} else {
 		enterErrorLabel("year", "Te rugam sa introduci o valoare valida");
 	}
