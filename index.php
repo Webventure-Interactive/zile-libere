@@ -1,3 +1,14 @@
+<?php
+	if (stripos($_SERVER['REQUEST_URI'], 'api') !== false) {
+		
+		include 'calcul_zile.php';
+
+		if ( is_numeric(substr($_SERVER['REQUEST_URI'], -4)) ) {
+			return returnLegalDays( substr($_SERVER['REQUEST_URI'], -4), 1 );
+		}
+		return json_encode(['error' => 'Link-ul trebuie sa contina anul dorit']);
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,8 +55,8 @@
 			<div class="clearfix row">
 				<div class="col-xs-12 col-sm-6">
 					<span class="text">Tot ce trebuie sa faci este sa apelezi</span>
-					<div class="quote_text"> /getApi.php?year= </div>
-					<span class="text">cu anul dorit si vei primi un raspuns de forma:</span>
+					<div class="quote_text"> /api/2017 </div>
+					<span class="text">sau anul dorit si vei primi un raspuns de forma:</span>
 				</div>
 				<div class="col-xs-12 col-sm-6">
 					<div class="quote_text">
@@ -78,7 +89,7 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<div class="container">
 		<h3 class="content_title">Serviciile Webventure Development</h3>
 

@@ -10,7 +10,7 @@ function calcServicesBoxHeight(){
 	});
 };
 
-function showFreeDays(yearnr){
+function showFreeDaysTable(yearnr){
 	$.ajax({
         type: 'POST',
         url: "getDays.php",
@@ -29,25 +29,35 @@ function removeErrorLabel(labelName) {
     $("label#label_error[for='" + labelName + "']").remove();
 }
 
+function showFreeDays(){
+	var year = $('.input_zile').val();
+
+	if ( year && year > 1970 ) {
+		removeErrorLabel("year");
+		showFreeDaysTable(year);
+
+		setTimeout(function(){ // pentru a se face update si la anul din getDays.php
+			$('.the_year').text(year);
+		}, 100);
+	} else {
+		enterErrorLabel("year", "Te rugam sa introduci o valoare valida");
+	}
+}
+
 $(document).ready(function(){
 
 	calcServicesBoxHeight();
 
 	$('.search').click(function(){
-		var year = $('.input_zile').val();
-
-		if ( year && year > 1970 ) {
-			removeErrorLabel("year");
-			showFreeDays(year);
-
-			setTimeout(function(){ // pentru a se face update si la anul din getDays.php
-				$('.the_year').text(year);
-			}, 100);
-		} else {
-			enterErrorLabel("year", "Te rugam sa introduci o valoare valida");
-		}
+		showFreeDays();
 	});
 
+});
+
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+        showFreeDays();
+    }
 });
 
 $(window).resize(function(){
