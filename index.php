@@ -4,9 +4,9 @@
 		include 'calcul_zile.php';
 
 		if ( is_numeric(substr($_SERVER['REQUEST_URI'], -4)) ) {
-			return returnLegalDays( substr($_SERVER['REQUEST_URI'], -4), 1 );
+			die(returnLegalDays( substr($_SERVER['REQUEST_URI'], -4), 1 ));
 		}
-		return json_encode(['error' => 'Link-ul trebuie sa contina anul dorit']);
+		die(json_encode(['error' => 'Link-ul trebuie sa contina anul dorit']));
 	}
 ?>
 <!DOCTYPE html>
