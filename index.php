@@ -13,6 +13,10 @@
 	if ( is_numeric(substr($_SERVER['REQUEST_URI'], -4)) ) {
 		$year = substr($_SERVER['REQUEST_URI'], -4);
 	}
+	
+	
+	$site_url = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +25,7 @@
 	<meta charset="UTF-8" >
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo $site_url; ?>/css/style.css">
 	<script src="https://use.fontawesome.com/45050bf34e.js"></script>
 
 	<script
@@ -29,7 +33,7 @@
 	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 	  crossorigin="anonymous"></script>
 
-  	<script type="text/javascript" src="js/script.js"></script>
+  	<script type="text/javascript" src="<?php echo $site_url; ?>/js/script.js"></script>
 </head>
 <body>
 
@@ -215,7 +219,7 @@
 	<div class="footer">
 		<div class="container clearfix">
 			<span class="copyright">© Copyright <?php echo date('Y'); ?>. Toate drepturile rezervate.</span>
-			<span class="developed_by text_right">Dezvoltat de <img src="img/logo_webventure.png"></span>
+			<span class="developed_by text_right">Dezvoltat de <img src="<?php echo $site_url; ?>/img/logo_webventure.png"></span>
 		</div>
 	</div>
 
