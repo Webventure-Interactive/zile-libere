@@ -67,7 +67,7 @@
 	</div>
 
 	<div class="container">
-		<h3 class="content_title">Zile libere <span class="the_year"><?php echo $year; ?></span></h3>
+		<h3 class="content_title margin-bottom-25">Zile libere <span class="the_year"><?php echo $year; ?></span></h3>
 
 		<div class="days_table clearfix">
 			<?php include("getDays.php"); ?>
@@ -81,7 +81,7 @@
 			<div class="clearfix row">
 				<div class="col-xs-12 col-sm-6">
 					<span class="text">Tot ce trebuie sa faci este sa apelezi</span>
-					<div class="quote_text"> /api/2017 </div>
+					<div class="quote_text"> https://zilelibere.webventure.ro/api/[yyyy] </div>
 					<span class="text">si vei primi un raspuns de forma:</span>
 				</div>
 				<div class="col-xs-12 col-sm-6">
@@ -235,8 +235,8 @@
 
 	<div class="footer">
 		<div class="container clearfix">
-			<span class="copyright">© Copyright <?php echo date('Y'); ?>. Toate drepturile rezervate.</span>
 			<span class="developed_by text_right">Dezvoltat de <img src="<?php echo $site_url; ?>/img/logo_webventure.png"></span>
+			<span class="copyright">© Copyright <?php echo date('Y'); ?>. Toate drepturile rezervate.</span>
 		</div>
 	</div>
 
