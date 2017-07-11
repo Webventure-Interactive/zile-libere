@@ -4,7 +4,7 @@
 		include 'calcul_zile.php';
 		header("Content-Type: application/json");
 
-		$urlYear = end(explode("/", $_SERVER['REQUEST_URI']));
+		@list(, $urlYear) = explode("/", ltrim($_SERVER['REQUEST_URI'], "/"));
 
 		if ( strlen($urlYear) != 4 || !is_numeric($urlYear)  ) {
 			die(json_encode(['error' => 'Anul introdus nu are un format valid [aaaa]']));
