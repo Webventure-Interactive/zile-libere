@@ -7,7 +7,7 @@
 		@list(, $urlYear) = explode("/", ltrim($_SERVER['REQUEST_URI'], "/"));
 
 		if ( strlen($urlYear) != 4 || !is_numeric($urlYear)  ) {
-			die(json_encode(['error' => 'Anul introdus nu are un format valid [aaaa]']));
+			die(json_encode(['error' => 'Anul \''. $urlYear .'\' introdus nu are un format valid [aaaa]']));
 		}
 		
 		die(returnLegalDays( $urlYear, 1 ));
