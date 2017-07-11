@@ -13,7 +13,7 @@ function calcServicesBoxHeight(){
 function showFreeDaysTable(yearnr){
 	$.ajax({
         type: 'POST',
-        url: "getDays.php",
+        url: "/getDays.php",
         method: "POST",
         data: {year: yearnr}
     }).success(function (res) {

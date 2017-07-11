@@ -2,11 +2,13 @@
 	if (stripos($_SERVER['REQUEST_URI'], 'api') !== false) {
 		
 		include 'calcul_zile.php';
+		header("Content-Type: aplication/json");
 
 		if ( is_numeric(substr($_SERVER['REQUEST_URI'], -4)) ) {
 			die(returnLegalDays( substr($_SERVER['REQUEST_URI'], -4), 1 ));
 		}
-		die(json_encode(['error' => 'Link-ul trebuie sa contina anul dorit']));
+		
+		die(json_encode(['error' => 'Link-ul trebuie sa contina anul dorit de forma [yyyy]']));
 	}
 
 	$year = date("Y");
