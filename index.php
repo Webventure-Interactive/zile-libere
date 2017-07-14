@@ -53,6 +53,11 @@
 
 	<!-- Site Js -->
   	<script type="text/javascript" src="<?php echo $site_url; ?>/js/script.js"></script>
+
+  	<?php if ( file_exists("analytics_code.php") ): ?>
+  		<?php include ("analytics_code.php"); ?>
+  	<?php endif ?>
+
 </head>
 <body>
 
