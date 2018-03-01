@@ -52,6 +52,7 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+	<script src="<?php echo $site_url; ?>/js/jquery.matchHeight.js"></script>
 
 	<!-- Site Js -->
   	<script type="text/javascript" src="<?php echo $site_url; ?>/js/script.js"></script>
@@ -92,9 +93,16 @@
 
 			<div class="clearfix row">
 				<div class="col-xs-12 col-sm-6">
-					<span class="text">Tot ce trebuie sa faci este sa apelezi</span>
-					<div class="quote_text"> https://zilelibere.webventure.ro/api/[yyyy] </div>
-					<span class="text">si vei primi un raspuns de forma:</span>
+                    <div class="match">
+                        <span class="text">Tot ce trebuie sa faci este sa apelezi</span>
+                        <div class="quote_text"> https://zilelibere.webventure.ro/api/[yyyy] </div>
+                        <span class="text">si vei primi un raspuns de forma:</span>
+                    </div>
+                    <div class="github match">
+                        <span class="text">
+                            <a href="https://github.com/Webventure-Interactive/zile-libere" target="_blank">Fork on github <i class="fa fa-github"></i></a>
+                        </span>
+                    </div>
 				</div>
 				<div class="col-xs-12 col-sm-6">
 					<div class="quote_text">

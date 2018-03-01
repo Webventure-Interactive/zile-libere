@@ -60,6 +60,8 @@ $(document).ready(function(){
 		showFreeDays();
 	});
 
+	$('.match').matchHeight({byRow: false});
+
 });
 
 $(document).keypress(function(e) {

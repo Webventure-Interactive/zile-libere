@@ -368,6 +368,18 @@ body{
     border: none;
     background: transparent;
 }
+
+.github {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.github .text a{
+	color: white;
+}
+.github a:hover {
+	color: #e73931;
+}
 /* END Box Need API */
 
 
