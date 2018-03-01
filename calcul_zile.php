@@ -15,6 +15,7 @@
 		$day = (($d + $e + 114) % 31) + 1;
 		$easter = date('Y/m/d', strtotime(jdtogregorian (juliantojd(intval($month), $day, $year))));
 		$easter2 = date('Y/m/d', strtotime($easter . '+1 day'));
+		$bigFriday = date('Y/m/d', strtotime($easter . '-2 day'));
 		$rusalls = date('Y/m/d', strtotime($easter . '+50 day'));
 
 		$legalDays = [
@@ -41,7 +42,16 @@
 				],
 			],
 			[
-				'name' => 'Paștele Ortodox', 
+				'name' => 'Vinerea Mare',
+				'date' => [
+					[
+						'date' => $bigFriday,
+						'weekday' => date('D',  strtotime($bigFriday)),
+					],
+				],
+			],
+			[
+				'name' => 'Paștele Ortodox',
 				'date' => [
 					[
 						'date' => $easter,
