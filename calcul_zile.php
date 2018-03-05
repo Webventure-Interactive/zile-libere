@@ -63,7 +63,7 @@
 				'date' => [
 					[
 						'date' => $year . '/05/01',
-						'weekday' => date('D',  strtotime($year . '/01/05')),
+						'weekday' => date('D',  strtotime($year . '/05/01')),
 					],
 				],
 			],
@@ -72,7 +72,7 @@
 				'date' => [
 					[
 						'date' => $year . '/06/01',
-						'weekday' => date('D',  strtotime($year . '/01/06')),
+						'weekday' => date('D',  strtotime($year . '/06/01')),
 					],
 				],
 			],

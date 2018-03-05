@@ -16,37 +16,38 @@
 <?php $total_free_days = 0; ?>
 <?php $total_free_week_days = 0; ?>
 
-<?php foreach ($days as $day) { ?>
-	
+<?php foreach ($days as &$day) {
+    $daysGrouped = [];
+    $daysWordsGrouped = [];
+    if (count($day['date']) > 0) {
+        foreach ($day['date'] as $d) {
+            if ($d['weekday'] === 'Sat' || $d['weekday'] == 'Sun') {
+                $span = sprintf("<span class='weekendDay'>%s</span>", strftime('%d', strtotime($d['date'])));
+            } else {
+                $total_free_week_days++;
+                $span = sprintf("<span>%s</span>", strftime('%d', strtotime($d['date'])));
+            }
+            $total_free_days++;
+            $daysGrouped[date('n', strtotime($d['date']))][] = $span;
+            $daysWordsGrouped[] = strftime("%A", strtotime($d['date']));
+        }
+        $groups = [];
+        foreach ($daysGrouped as $month => $group) {
+            $groups[] = implode(", ", $group) . strftime(' %B', mktime(null, null, null, $month, 1));
+        }
+        $daysNumber = implode(", ", $groups);
+        $daysWords = sprintf("(%s)", implode(", ", $daysWordsGrouped));
+    }
+?>
 	<div class="table_row">
 		<div class="col-6 col_name"> <?php echo $day['name'] ?> </div>
-		<div class="col-6 col_date">
-			<?php foreach ($day['date'] as $k => $date) { ?>
-				<span class="<?php echo ( $date['weekday'] == "Sat" || $date['weekday'] == "Sun" ) ? 'weekendDay' : '' ?>"> 
-					<?php echo count($day['date']) > 1 ? 
-						( !$k ? strftime('%d', strtotime($date['date'])) . ", " : strftime('%d %B', strtotime($date['date'])) ) 
-						: strftime('%d %B', strtotime($date['date']));
-					?> 
-				</span>
-				<?php $total_free_days++; ?>
-				<?php
-					if ( $date['weekday'] == "Sat" || $date['weekday'] == "Sun" ) {
-						$total_free_week_days++;
-					}
-				?>
-			<?php }	?>
-
-			<span class="weekDays">(
-				<?php foreach ($day['date'] as $k => $date) { ?>
-					<?php echo strftime("%A", strtotime($date['weekday'])); ?><span>,</span>
-				<?php }	?>
-			)</span>
+		<div class="col-6 col_date"><?php echo $daysNumber ?>
+			<span class="weekDays"><?php echo $daysWords ?></span>
 		</div>
 		<div class="clearfix"></div>
 	</div>
 
 <?php } ?>
-
 <div class="legend"> *zilele marcate cu rosu sunt zile libere in weekend </div>
 
 <div class="total_zile_libere">
@@ -54,6 +55,6 @@
 		Zile libere <span class="the_year"><?php echo date("Y"); ?></span>: <span class="nr_zile"><?php echo $total_free_days; ?></span>
 	</div>
 	<div>
-		Zile libere in timpul saptamanii lucratoare: <span class="nr_zile"> <?php echo $total_free_days - $total_free_week_days ?> </span>
+		Zile libere in timpul saptamanii lucratoare: <span class="nr_zile"> <?php echo $total_free_week_days ?> </span>
 	</div>
 </div>
