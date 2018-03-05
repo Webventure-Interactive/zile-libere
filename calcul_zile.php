@@ -42,17 +42,12 @@
 				],
 			],
 			[
-				'name' => 'Vinerea Mare',
-				'date' => [
-					[
-						'date' => $bigFriday,
-						'weekday' => date('D',  strtotime($bigFriday)),
-					],
-				],
-			],
-			[
 				'name' => 'Paștele Ortodox',
 				'date' => [
+				    [
+				        'date' => $bigFriday,
+                        'weekday' => date('D', strtotime($bigFriday))
+                    ],
 					[
 						'date' => $easter,
 						'weekday' => date('D',  strtotime($easter)),

@@ -38,8 +38,7 @@
 
 			<span class="weekDays">(
 				<?php foreach ($day['date'] as $k => $date) { ?>
-					<?php echo strftime("%A", strtotime($date['weekday'])); ?>
-					<span>,</span>
+					<?php echo strftime("%A", strtotime($date['weekday'])); ?><span>,</span>
 				<?php }	?>
 			)</span>
 		</div>
